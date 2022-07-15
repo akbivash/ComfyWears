@@ -1,0 +1,120 @@
+
+:root{
+    --color-1: rgb(222, 237, 158);
+    --color-2: rgb(183, 237, 158);
+    --color-3:rgb(158, 237, 173);
+    --color-4: rgb(158, 237, 213);
+    --color-5:rgb(158, 222, 237);
+    --color-6: rgb(158, 183, 237);
+    --color-7: #7f8fa6;
+    --color-8: #273c75;
+    --black-1: #353b48;
+    --gray-1:#b2bec3;
+    --yellow-1:#f6c31d;
+    --yellow-2:#ffeaa7;
+}
+.container{
+/* margin-top: 15vh; */
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+.underline{
+    position: relative;
+    color: var(--color-8);
+}
+.container .underline::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    bottom: -.8rem;
+    left: 0;
+    height: 4px;
+    border-radius: 10px;
+    background: var(--color-7);
+}
+.search_box input{
+    margin-right: 1rem;
+    padding: 10px 1rem;
+    outline: none;
+    border: 1px solid rgb(191, 187, 187);
+    border-radius: 10px;
+}
+input[type="search"]::-webkit-search-cancel-button {
+
+    /* Remove default */
+    -webkit-appearance: none;
+  
+    /* Now your own custom styles */
+     height: 14px;
+     width: 14px;
+     display: block;
+     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC);
+    /* setup all the background tweaks for our custom icon */
+    background-repeat: no-repeat;
+  
+    /* icon size */
+    background-size: 14px;
+  
+  }
+.search_box {
+    font-size: 1.4rem;
+
+}
+.filter_btns{
+    margin: 2rem;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+  
+}
+.filter_btns button{
+    padding: 10px 20px;
+    border-radius: 10px;
+  margin: .5em;
+    background: var(--color-7);
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.menu_items {
+ padding: 1rem;
+ display: grid;
+ gap: 2rem;
+}
+.menu_items .item{
+  /* margin-bottom: 2rem; */
+}
+.item img{
+    width: 100%;
+    height: 220px;
+    max-width: 300px;
+}
+
+
+@media screen and (min-width:600px) {
+    .menu_items{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+    }
+}
+
+.menu_items .item{
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    
+}
+
+
+.item .item_info{
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+}
+
+
