@@ -91,10 +91,23 @@ function scroll(e){
     const id = e.target.getAttribute('href').slice(1)
     const el = document.getElementById(id)
     var navHeight = navbar.getBoundingClientRect().height
-    const position = el.offsetTop - navHeight
-    window.scrollTo({
-      left: 0,
-      top: position,
-    })
-  
+ const elPad =window.getComputedStyle(el, null).getPropertyValue('padding-top')  
+    let position = el.offsetTop - navHeight 
+
+    if(elPad === '0px'){
+      position -= 30
+      window.scrollTo({
+        left: 0,
+        top: position,
+      })
+    }else{
+
+      window.scrollTo({
+        left: 0,
+        top: position,
+      })
+
+
+    }
+   
 }
