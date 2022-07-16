@@ -3,43 +3,67 @@ const navbar = document.querySelector('.navbar')
 const linksContainer = document.querySelector('.links')
 const links = linksContainer.querySelectorAll('li')
 const explore = document.querySelector('.explore')
-const homepage = document.querySelector('.homepage')
-const infoBox = document.querySelector('.info_box')
+const wholeContainer = document.querySelector('.whole_container')
+
 const openCartBtn = document.querySelectorAll('.open_cart')
+const cartStore = document.querySelector('.cart_store')
 
-
-// openCartBtn.addEventListener('click', () => {
-//   infoBox.classList.add('show_info')
-// })
-// openCartBtn.classList.remove('show_info')
 
 openCartBtn.forEach((btn) => {
   btn.addEventListener('click', () => {
-  infoBox.classList.add('show_info')
+   
 linksContainer.classList.remove('show')
-homepage.classList.remove('blur')
+cartStore.classList.toggle('show_cart')
+// times.style.display = 'none'
+// bars.style.display = 'block'
+
+wholeContainer.classList.remove('blur')
+
+
+
 
   })
 })
 menuBtn.addEventListener('click' , (e) => {
     const bars = e.currentTarget.children[0]
     const times = e.currentTarget.children[1]
+  
+
   if(linksContainer.classList.contains('show')){
     linksContainer.classList.remove('show')
   bars.style.display = 'block'
   times.style.display = 'none'
-homepage.classList.remove('blur')
-  infoBox.classList.remove('show_info')
+wholeContainer.classList.remove('blur')
+
+
    
   }else{
     linksContainer.classList.add('show')
 bars.style.display = 'none'
 times.style.display = 'block'
-homepage.classList.add('blur')
+wholeContainer.classList.add('blur')
+  }
+
+  if(cartStore.classList.contains('show_cart')){
+    cartStore.classList.remove('show_cart')
+
+  linksContainer.classList.remove('show')
+  bars.style.display = 'block'
+  times.style.display = 'none'
+
+  wholeContainer.classList.remove('blur')
+
   }
 } ) 
 
+window.addEventListener('resize', () => {
 
+  
+if(window.innerWidth > 800  ){
+  cartStore.classList.remove('show_cart')
+} else{
+}
+})
 
 
 
@@ -52,7 +76,7 @@ function elementInView(){
   linksContainer.classList.remove('show')
   times.style.display = 'none'
   bars.style.display = 'block'
-  homepage.classList.remove('blur')
+  wholeContainer.classList.remove('blur')
 
   
 }
@@ -88,6 +112,7 @@ exploreBtn.addEventListener('click', scroll)
 
 function scroll(e){
   e.preventDefault()
+  cartStore.classList.remove('show_cart')
     const id = e.target.getAttribute('href').slice(1)
     const el = document.getElementById(id)
     var navHeight = navbar.getBoundingClientRect().height
